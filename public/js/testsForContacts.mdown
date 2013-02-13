@@ -1,0 +1,8 @@
+# Global App View
+
+## Initialize Method
+-Create instance of add contact view, passing a collection
+-Create instance of all contacts view and rendering it
+-append allcontacts view to the body
+
+

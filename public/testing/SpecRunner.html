@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Jasmine Spec Runner</title>
+
+  <link rel="stylesheet" type="text/css" href="../css/qunit.css">
+
+  <script type="text/javascript" src="../js/qunitjs.js"></script>
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <script src="http://underscorejs.org/underscore.js"></script>
+  <script src="http://backbonejs.org/backbone.js"></script>
+  
+  
+</head>
+
+<body>
+<h1 id="qunit-header">QUnit Test Suite</h1>
+    <h2 id="qunit-banner"></h2>
+    <div id="qunit-testrunner-toolbar"></div>
+    <h2 id="qunit-userAgent"></h2>
+    <ol id="qunit-tests">test markup, hidden.</ol>
+    <div id="qunit-fixture">
+
+    </div>
+
+<script type="text/template" id="allContactsTemplate">
+    <td><%= first_name %></td>
+    <td><%= last_name %></td>
+    <td><%= email_address %></td>
+    <td><%= description %></td>
+    <td><a href='#contacts/<%= id %>/edit' class="edit"> Edit </a></td>
+    <td><a href='#contacts/<%= id %>' class="delete"> Delete </a></td>
+</script>
+
+<script src="src/app.js"></script>  
+  <script>
+
+    App.contacts = new App.Collections.Contacts;
+    //grabs all of the appointments using an AJAX call (fetch)
+    App.contacts.fetch().then(function() {
+      new App.Views.App({ collection: App.contacts });
+    });
+  </script>
+<script src="spec/appSpec.js"></script>
+</body>
+</html>
